@@ -4,16 +4,24 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const productRouter = require('./routes/ProductRouter');
-const authRouter = require('./routes/auth');
 const cors = require('cors');
 const MONGO_URL = process.env.MONGO_URL;
+const auth = require('./middleware/auth').verifyToken;
+const { graphqlHTTP } = require('express-graphql');
+const graphqlSchema = require('./graphQL/schema');
+const graphqlResolver = require('./graphQL/resolvers');
 
 app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/auth', authRouter);
-app.use('', productRouter);
+
+app.use(auth);
+
+app.use('/graphql', graphqlHTTP({
+  schema: graphqlSchema,
+  rootValue: graphqlResolver,
+  graphiql: true
+}))
 
 mongoose.set('useFindAndModify', false);
 mongoose.connect(MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true})
