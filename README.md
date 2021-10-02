@@ -1,6 +1,9 @@
 # Ecommerce GraphQL API
 
-![alt text](https://918429.smushcdn.com/2325059/wp-content/uploads/2020/05/comercio-online-mcommerce.jpg)
+<p align="center">
+  <img src="https://cdn.codersociety.com/uploads/graphql-reasons.png" width="350" title="hover text">
+  <img src="https://918429.smushcdn.com/2325059/wp-content/uploads/2020/05/comercio-online-mcommerce.jpg" width="350" alt="accessibility text">
+</p>
 
 ## Table of contents
 
