@@ -8,8 +8,6 @@
 * [Run](#run)
 * [Technology](#technology)
 * [Database model](#database-model)
-* [Queries](#queries)
-* [Mutations](#mutations)
 * [Licence](#licence)
 
 ## Introduction
@@ -57,34 +55,6 @@ All the models can be found in the models directory created using mongoose.
 * email (String)
 
 * password (String)
-
-## Queries
-
-### login()
-
-### products()
-
-### product()
-
-* Requires token-based authentication
-
-## Mutations
-
-### createUser()
-
-* Requires token-based authentication
-
-### createProduct()
-
-* Requires token-based authentication
-
-### updateProduct()
-
-* Requires token-based authentication
-
-### deleteProduct()
-
-* Requires token-based authentication
 
 ## Licence
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
