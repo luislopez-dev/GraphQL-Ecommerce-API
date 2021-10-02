@@ -62,11 +62,19 @@ All the models can be found in the models directory created using mongoose.
 
 ### createUser()
 
+* Requires token-based authentication
+
 ### createProduct()
+
+* Requires token-based authentication
 
 ### updateProduct()
 
+* Requires token-based authentication
+
 ### deleteProduct()
+
+* Requires token-based authentication
 
 ## Queries
 
