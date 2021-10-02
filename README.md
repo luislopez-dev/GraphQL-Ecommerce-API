@@ -1,5 +1,7 @@
 # Ecommerce GraphQL API
 
+![alt text](https://cdn.codersociety.com/uploads/graphql-reasons.png)
+
 ## Table of contents
 
 * [Introduction](#introduction)
