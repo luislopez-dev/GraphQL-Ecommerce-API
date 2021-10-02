@@ -60,7 +60,21 @@ All the models can be found in the models directory created using mongoose.
 
 ## Mutations
 
+### createUser
+
+### createProduct
+
+### updateProduct
+
+### deleteProduct
+
 ## Queries
+
+### login
+
+### products
+
+### product
 
 ## Licence
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
