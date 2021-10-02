@@ -1,6 +1,6 @@
 # Ecommerce GraphQL API
 
-![alt text](https://www.flexxus.com.ar/wp-content/uploads/2019/01/isometric-e-commerce-concept-online-store.jpg)
+![alt text](https://s3.amazonaws.com/cdn.wp.m4ecmx/wp-content/uploads/2015/05/31143018/Qu%C3%A9-es-el-eCommerce-compressor.jpg)
 
 ## Table of contents
 
