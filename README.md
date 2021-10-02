@@ -8,7 +8,8 @@
 * [Run](#run)
 * [Technology](#technology)
 * [Database model](#database-model)
-* [Endpoints](#endpoints)
+* [Mutations](#mutations)
+* [Queries](#queries)
 * [Licence](#licence)
 
 ## Introduction
@@ -55,7 +56,9 @@ All the models can be found in the models directory created using mongoose.
 
 * password (String)
 
-## Endpoints
+## Mutations
+
+## Queries
 
 ### User login
 

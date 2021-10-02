@@ -12,7 +12,9 @@ module.exports = buildSchema(`
   }
 
   type User {
-      _id: ID!
+      id: ID!
+      token: String!
+      
   }
 
   input UserInputData {
@@ -63,5 +65,4 @@ module.exports = buildSchema(`
     query: RootQuery
     mutation: RootMutation
   }
-
 `);

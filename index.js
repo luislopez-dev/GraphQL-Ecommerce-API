@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const PORT = process.env.PORT;
-const graphiql = process.env.graphiql;
+const graphiql = (process.env.graphiql == "true");
 const MONGO_URL = process.env.MONGO_URL;
 const path = require('path');
 const mongoose = require('mongoose');
@@ -18,7 +18,6 @@ const morgan = require('morgan');
 const fs = require('fs');
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
 
-app.use(helmet());
 app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,7 +28,7 @@ app.use('/graphql', graphqlHTTP({
   schema: graphqlSchema,
   rootValue: graphqlResolver,
   graphiql,
-  formatError(err) {
+  customFormatErrorFn(err) {
     if (!err.originalError) {
       return err;
     }

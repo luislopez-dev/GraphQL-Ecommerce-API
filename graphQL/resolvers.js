@@ -3,7 +3,6 @@ const Product = require('../models/Product');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const validator = require('validator');
-const jwt = require('jsonwebtoken');
 
 module.exports = {
 
@@ -38,10 +37,10 @@ module.exports = {
     });
     const createdUser = await user.save();
     const token = jwt.sign({userId: createdUser._id.toString()}, 'secret', {expiresIn: '24h'});    
-    return { ...createdUser._doc, _id: createdUser._id.toString(), token };
+    return { ...createdUser._doc, id: createdUser._id.toString(), token };
   },
 
-  login: async function({ email, password }) {
+  login: async function({ email, password }, req) {
 
     if (validator.isEmpty(email) || validator.isEmpty(password)) {
       const error = new Error('Required fields empty');
@@ -74,16 +73,7 @@ module.exports = {
 
       throw error;
     }
-    if(validator.isEmpty(productInput.name) || 
-        validator.isEmpty(productInput.price) ||
-        validator.isEmpty(productInput.description) ||
-        validator.isEmpty(productInput.ammount) ||
-        validator.isEmpty(productInput.imgURL)
-      ){
-      const error = new Error('Required fields empty');
-      error.code = 422;
-      throw error;
-    }
+    
     const product = new Product({
       name:  productInput.name,
       price: productInput.price,
@@ -92,40 +82,22 @@ module.exports = {
       imgURL: productInput.imgURL
     });
 
+    console.log(productInput);
+
     const createdProduct =  await product.save();
 
-    return {
-      ...createdProduct._doc,
-      _id: createdProduct._id.toString(),
-      createdAt: createdProduct.createdAt.toISOString(),
-      updatedAt: createdProduct.updatedAt.toISOString()
-    };;
+    return true;
   },
 
   updateProduct: async function({productInput}, req){
 
     if(!req.isAuth){
-
       const err = new Error('Not authenticated');
-
       err.code = 401;
-
       throw err;
     }
 
-    if(validator.isEmpty(productInput.name) || 
-     validator.isEmpty(productInput.price) ||
-     validator.isEmpty(productInput.description) ||
-     validator.isEmpty(productInput.ammount) ||
-     validator.isEmpty(productInput.imgURL)
-    ){
-     const error = new Error('Required fields empty');
-     error.code = 422;
-     throw error;
-    }
-
     const product = await Product.findById(productInput.id);
-
     product.name = productInput.name;
     product.price = productInput.price;
     product.description = productInput.description;
@@ -134,12 +106,7 @@ module.exports = {
 
     const updatedProduct = await product.save();
 
-    return {
-      ...updatedProduct._doc,
-      _id: updatedProduct._id.toString(),
-      createdAt: updatedProduct.createdAt.toISOString(),
-      updatedAt: updatedProduct.updatedAt.toISOString()
-    };
+    return true;
   },
 
   deleteProduct: async function({id}, req){
@@ -152,47 +119,28 @@ module.exports = {
 
       throw err;
     }
-
-    if(validator.isEmpty(productInput.name)){
-      const error = new Error('Required fields empty');
-     error.code = 422;
-     throw error;
-    }
-
     await Product.findByIdAndRemove(id);
 
     return true;
   },
 
-  products: async function({offset, limit}){
+  products: async function({offset, limit}, req){
 
     if(!req.isAuth){
-
       const err = new Error('Not authenticated');
-
       err.code = 401;
-
       throw err;
     }
 
-    if(validator.isEmpty(offset) || validator.isEmpty(limit)){
-     const error = new Error('Required fields empty');
-     error.code = 422;
-     throw error;
-    }
     const products = await Product.find().skip(offset).limit(limit);
 
     return {products: products};
   },
 
-  product: async function({id}){
-
+  product: async function({id}, req){
     if(!req.isAuth){
-
       const err = new Error('Not authenticated');
-
       err.code = 401;
-
       throw err;
     }
 
