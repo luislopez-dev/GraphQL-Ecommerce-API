@@ -9,6 +9,8 @@
 * [Database model](#database-model)
 * [Installation](#installation)
 * [Run](#run)
+* [Mutations](#mutations)
+* [Queries](#queries)
 * [Licence](#licence)
 
 ## Introduction
@@ -66,6 +68,14 @@ To run this application, you have to set your own environmental variables. For s
 * SET_GRAPHIQL= Boolean variable for enabling GraphiQL IDE.
 
 You can start the API server by running `npm start`
+
+## Mutations
+
+All the mutations can be found in the schema file
+
+## Queries
+
+All the queries can be found in the schema file
 
 ## Licence
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
