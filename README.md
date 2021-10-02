@@ -71,11 +71,11 @@ You can start the API server by running `npm start`
 
 ## Mutations
 
-All the mutations can be found in the schema file
+All the mutations can be found in the GraphQL schema file
 
 ## Queries
 
-All the queries can be found in the schema file
+All the queries can be found in the GraphQL schema file
 
 ## Licence
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
