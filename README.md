@@ -1,6 +1,6 @@
 # Ecommerce GraphQL API
 
-![alt text](https://cdn.codersociety.com/uploads/graphql-reasons.png)
+![alt text](https://inmobiliare.com/himalaya/wp-content/uploads/2020/05/4S-Real-Estate-ecommerce-tecnolog%C3%ADa-inmobiliare.png)
 
 ## Table of contents
 
