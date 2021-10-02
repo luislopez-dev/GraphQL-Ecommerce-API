@@ -65,6 +65,8 @@ To run this application, you have to set your own environmental variables. For s
 
 * SET_GRAPHIQL= Boolean variable for enabling GraphiQL IDE.
 
+You can start the API server by running `npm start`
+
 ## Licence
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
