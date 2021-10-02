@@ -1,7 +1,7 @@
 # Ecommerce GraphQL API
 
 <p align="center">
-  <img src="https://inmobiliare.com/himalaya/wp-content/uploads/2020/05/4S-Real-Estate-ecommerce-tecnolog%C3%ADa-inmobiliare.png" width="350" title="hover text">
+  <img src="https://www.flexxus.com.ar/wp-content/uploads/2019/01/isometric-e-commerce-concept-online-store.jpg" width="350" title="hover text">
 </p>
 
 ## Table of contents
