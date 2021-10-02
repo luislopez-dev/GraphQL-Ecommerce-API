@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const PORT = process.env.PORT;
-const graphiql = (process.env.graphiql == "true");
+const SET_GRAPHIQL = (process.env.SET_GRAPHIQL == "true");
 const MONGO_URL = process.env.MONGO_URL;
 const path = require('path');
 const mongoose = require('mongoose');
@@ -27,7 +27,7 @@ app.use(morgan('combined', { stream:accessLogStream }));
 app.use('/graphql', graphqlHTTP({
   schema: graphqlSchema,
   rootValue: graphqlResolver,
-  graphiql,
+  graphiql: SET_GRAPHIQL,
   customFormatErrorFn(err) {
     if (!err.originalError) {
       return err;

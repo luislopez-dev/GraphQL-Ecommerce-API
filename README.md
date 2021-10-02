@@ -24,6 +24,8 @@ To run this application, you have to set your own environmental variables. For s
 
 * PORT=  This is the port number for running the Node.js server. 
 
+* SET_GRAPHIQL= Boolean variable for enabling GraphiQL IDE.
+
 ## Technology
 
 * Node.js
@@ -57,6 +59,8 @@ All the models can be found in the models directory created using mongoose.
 * password (String)
 
 ## Mutations
+
+
 
 ## Queries
 
