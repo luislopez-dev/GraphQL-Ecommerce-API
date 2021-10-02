@@ -1,6 +1,6 @@
 # Ecommerce GraphQL API
 
-![alt text](https://s3.amazonaws.com/cdn.wp.m4ecmx/wp-content/uploads/2015/05/31143018/Qu%C3%A9-es-el-eCommerce-compressor.jpg)
+![alt text](https://d1ih8jugeo2m5m.cloudfront.net/2021/06/Ecommerce-Thumbnail.jpg)
 
 ## Table of contents
 
