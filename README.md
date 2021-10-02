@@ -1,8 +1,6 @@
 # Ecommerce GraphQL API
 
-<p align="center">
-  <img src="https://www.flexxus.com.ar/wp-content/uploads/2019/01/isometric-e-commerce-concept-online-store.jpg" width="350" title="hover text">
-</p>
+![alt text](https://www.flexxus.com.ar/wp-content/uploads/2019/01/isometric-e-commerce-concept-online-store.jpg)
 
 ## Table of contents
 
