@@ -2,6 +2,11 @@
 
 ![alt text](https://inmobiliare.com/himalaya/wp-content/uploads/2020/05/4S-Real-Estate-ecommerce-tecnolog%C3%ADa-inmobiliare.png)
 
+<p align="center">
+  <img src="https://inmobiliare.com/himalaya/wp-content/uploads/2020/05/4S-Real-Estate-ecommerce-tecnolog%C3%ADa-inmobiliare.png" width="350" title="hover text">
+  <img src="https://inmobiliare.com/himalaya/wp-content/uploads/2020/05/4S-Real-Estate-ecommerce-tecnolog%C3%ADa-inmobiliare.png" width="350" alt="accessibility text">
+</p>
+
 ## Table of contents
 
 * [Introduction](#introduction)
