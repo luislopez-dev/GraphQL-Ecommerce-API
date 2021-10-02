@@ -8,8 +8,6 @@
 * [Run](#run)
 * [Technology](#technology)
 * [Database model](#database-model)
-* [Mutations](#mutations)
-* [Queries](#queries)
 * [Licence](#licence)
 
 ## Introduction
@@ -57,80 +55,6 @@ All the models can be found in the models directory created using mongoose.
 * email (String)
 
 * password (String)
-
-## Mutations
-
-
-
-## Queries
-
-### User login
-
-#### ![POST](https://img.shields.io/badge/METHOD-POST-blue) `/api/auth/login`
-
-Parameters:
-
-| Name | required  | type  | Description |
-| :---:| :-:| :-:| :-:|
-| email | true  | String | User email address |
-| password | true | String | User password |
-
-### User registration
-
-![POST](https://img.shields.io/badge/METHOD-POST-blue) `/api/auth/register`
-
-Parameters:
-
-| Name | required  | type  | Description |
-| :---:| :-:| :-:| :-:|
-| name | true | String | User name |
-| email | true  | String | User email address |
-| password | true | String | User password |
-
-### Create new product
-
-![POST](https://img.shields.io/badge/METHOD-POST-blue) `/api`
-
-* Requires token-based authentication
-
-Parameters:
-
-| Name | required  | type  | Description |
-| :---:| :-:| :-:| :-:|
-| name | true | String | Name of the new product
-| price | true | Number | Price of the new product
-| description | true | String | Description of the new product
-| ammount | true | Number | Available ammount of the product
-| imgURL | true | String | Image URL of the new product
-
-### Get data of a speciic product
-
-![GET](https://img.shields.io/badge/METHOD-GET-brightgreen)  `/api/:productId`  
-
-* Requires token-based authentication
-
-### Update product
-
-![PUT](https://img.shields.io/badge/METHOD-PUT-yellow) `/api`
-
-* Requires token-based authentication.
-
-Parameters:
-
-| Name | required  | type  | Description |
-| :---:| :-:| :-:| :-:|
-| productId | true | String | Description |
-| name | true | String | New product name
-| price | true | Number | New product price
-| description | true | String | New product description
-| ammount | true | Number | New product available ammount
-| imgURL | true | String | New product image URL
-
-### Delete product
-
-![DELETE](https://img.shields.io/badge/METHOD-DELETE-red) `/api/:productId`
-
-* Requires token-based authentication
 
 ## Licence
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
