@@ -13,13 +13,12 @@ module.exports = buildSchema(`
 
   type User {
       _id: ID!
-      email: String!
-      password: String!
   }
 
   input UserInputData {
       email: String!
       password: String!
+      name: String!
   }
 
   input NewProductInputData {
