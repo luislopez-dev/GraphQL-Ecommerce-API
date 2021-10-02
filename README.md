@@ -8,6 +8,8 @@
 * [Run](#run)
 * [Technology](#technology)
 * [Database model](#database-model)
+* [Mutations](#mutations)
+* [Queries](#queries)
 * [Licence](#licence)
 
 ## Introduction
