@@ -1,6 +1,6 @@
 # Ecommerce GraphQL API
 
-![alt text](https://d1ih8jugeo2m5m.cloudfront.net/2021/06/Ecommerce-Thumbnail.jpg)
+![alt text](https://www.elemprendedor.com/wp-content/uploads/2020/09/eCommerce-Canal-Covid-19.jpg)
 
 ## Table of contents
 
