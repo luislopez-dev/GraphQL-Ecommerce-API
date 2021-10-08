@@ -59,6 +59,7 @@ module.exports = buildSchema(`
       login(email: String!, password: String!): AuthData!
       products(offset: Int!, limit:Int!): ProductsData!
       product(id: ID!): Product!
+      search(offset: Number!, limit: !Int, name: String): ProductsData!
   }
 
   schema {

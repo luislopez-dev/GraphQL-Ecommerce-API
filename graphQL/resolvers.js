@@ -126,23 +126,12 @@ module.exports = {
 
   products: async function({offset, limit}, req){
 
-    if(!req.isAuth){
-      const err = new Error('Not authenticated');
-      err.code = 401;
-      throw err;
-    }
-
     const products = await Product.find().skip(offset).limit(limit);
 
     return {products: products};
   },
 
   product: async function({id}, req){
-    if(!req.isAuth){
-      const err = new Error('Not authenticated');
-      err.code = 401;
-      throw err;
-    }
 
     if(validator.isEmpty(id)){
       const error = new Error('Required fields empty');
@@ -151,5 +140,24 @@ module.exports = {
      }
     const product = await Product.findById(id);
     return product;
-  }
+  },
+
+  search: async function({name, offset, limit}, req){
+
+    let products;
+
+    try {
+  
+      products = await Product.find({name: {$regex: name, $options:'i'}})
+      .skip(offset).limit(limit);
+        
+    } catch (error) {
+      const err = new Error(error.message);
+      err.code = 500;
+      throw err;
+    }
+  
+    return products;    
+  },
+
 }
