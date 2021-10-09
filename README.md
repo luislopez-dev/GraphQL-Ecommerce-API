@@ -1,6 +1,6 @@
 # Ecommerce GraphQL API
 
-![alt text](https://miro.medium.com/max/901/1*GkrYGz_r9W6AVgEloQpJFQ.png)
+![alt text](https://microprofile.io/wp-content/uploads/2019/01/GraphQL-Logo.png)
 
 ## Table of contents
 
