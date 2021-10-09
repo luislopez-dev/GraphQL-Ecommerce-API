@@ -1,6 +1,6 @@
 # Ecommerce GraphQL API
 
-![alt text](https://918429.smushcdn.com/2325059/wp-content/uploads/2020/05/comercio-online-mcommerce.jpg)
+![alt text](https://miro.medium.com/max/901/1*GkrYGz_r9W6AVgEloQpJFQ.png)
 
 ## Table of contents
 
