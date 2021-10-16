@@ -6,7 +6,7 @@ let verifyToken = (req, res, next) => {
 
   if(!authHeader){
     req.isAuth = false;
-    return next();
+    return next()
   }
 
   const token = authHeader.split(' ')[1];
