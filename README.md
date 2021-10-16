@@ -24,6 +24,7 @@ Ecommerce GraphQL API to implement with any fronted platform.
 * Express
 * MongoDB
 * Mongoose
+* NPM
 
 ## Database model
 
@@ -34,6 +35,10 @@ All the models can be found in the models directory created using mongoose.
 * name (String)
 
 * price (Number)
+
+* brand (String)
+
+* manufacturer (String)
 
 * description (String)
 
@@ -66,6 +71,8 @@ To run this application, you have to set your own environmental variables. For s
 * PORT=  This is the port number for running the Node.js server. 
 
 * SET_GRAPHIQL= Boolean variable for enabling GraphiQL IDE.
+
+* SECRET_KEY= This is your secret key for generating JWT tokens.
 
 You can start the API server by running `npm start`
 

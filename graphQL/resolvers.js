@@ -1,8 +1,11 @@
+require('dotenv').config();
+
 const User = require('../models/User');
 const Product = require('../models/Product');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const validator = require('validator');
+const SECRET_KEY = process.env.SECRET_KEY;
 
 module.exports = {
 
@@ -36,8 +39,8 @@ module.exports = {
       name: userInput.name
     });
     const createdUser = await user.save();
-    const token = jwt.sign({userId: createdUser._id.toString()}, 'secret', {expiresIn: '24h'});    
-    return { ...createdUser._doc, id: createdUser._id.toString(), token };
+    const token = jwt.sign({userId: createdUser._id.toString()}, SECRET_KEY, {algorithm: "HS256", expiresIn: '24h'});    
+    return { ...createdUser._doc, _id: createdUser._id.toString(), token };
   },
 
   login: async function({ email, password }, req) {
@@ -59,7 +62,7 @@ module.exports = {
       error.code = 401;
       throw error;
     }
-    const token = jwt.sign({userId: user._id.toString()}, 'secret', {expiresIn: '24h'});
+    const token = jwt.sign({userId: user._id.toString()}, SECRET_KEY, {algorithm: "HS256", expiresIn: '24h'});
     return { token: token };
   },
 
@@ -77,6 +80,8 @@ module.exports = {
     const product = new Product({
       name:  productInput.name,
       price: productInput.price,
+      brand: productInput.brand,
+      manufacturer: productInput.manufacturer,
       description: productInput.description,
       ammount: productInput.ammount,
       imgURL: productInput.imgURL
@@ -97,8 +102,10 @@ module.exports = {
       throw err;
     }
 
-    const product = await Product.findById(productInput.id);
+    const product = await Product.findById(productInput._id);
     product.name = productInput.name;
+    product.brand = productInput.brand;
+    product.manufacturer = productInput.manufacturer;
     product.price = productInput.price;
     product.description = productInput.description;
     product.ammount = productInput.ammount;
@@ -109,7 +116,7 @@ module.exports = {
     return true;
   },
 
-  deleteProduct: async function({id}, req){
+  deleteProduct: async function({_id}, req){
 
     if(!req.isAuth){
 
@@ -119,7 +126,7 @@ module.exports = {
 
       throw err;
     }
-    await Product.findByIdAndRemove(id);
+    await Product.findByIdAndRemove(_id);
 
     return true;
   },
@@ -131,14 +138,14 @@ module.exports = {
     return {products: products};
   },
 
-  product: async function({id}, req){
+  product: async function({_id}, req){
 
-    if(validator.isEmpty(id)){
+    if(validator.isEmpty(_id)){
       const error = new Error('Required fields empty');
       error.code = 422;
       throw error;
      }
-    const product = await Product.findById(id);
+    const product = await Product.findById(_id);
     return product;
   },
 

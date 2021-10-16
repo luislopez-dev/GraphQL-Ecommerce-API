@@ -4,7 +4,9 @@ module.exports = buildSchema(`
 
   type Product {
       _id: ID!
-      name: String!     
+      name: String!    
+      brand: String!
+      manufacturer: String! 
       price: Float!
       description: String!
       ammount: Int!
@@ -12,7 +14,7 @@ module.exports = buildSchema(`
   }
 
   type User {
-      id: ID!
+      _id: ID!
       token: String!
       
   }
@@ -26,6 +28,8 @@ module.exports = buildSchema(`
   input NewProductInputData {
       name: String!
       price: Float!
+      brand: String!
+      manufacturer: String!
       description: String!
       ammount: Int!
       imgURL: String!
@@ -36,8 +40,10 @@ module.exports = buildSchema(`
   }
 
   input UpdateProductInputData {
-    id: String!
+    _id: String!
     name: String!
+    brand: String!
+    manufacturer: String!
     price: Float!
     description: String!
     ammount: Int!
@@ -52,13 +58,13 @@ module.exports = buildSchema(`
       createUser(userInput: UserInputData): User!
       createProduct(productInput: NewProductInputData): Boolean!
       updateProduct(productInput: UpdateProductInputData): Boolean!
-      deleteProduct(id: String!): Boolean!
+      deleteProduct(_id: String!): Boolean!
   }
 
   type RootQuery {
       login(email: String!, password: String!): AuthData!
       products(offset: Int!, limit:Int!): ProductsData!
-      product(id: ID!): Product!
+      product(_id: ID!): Product!
       search(offset: Number!, limit: !Int, name: String): ProductsData!
   }
 
