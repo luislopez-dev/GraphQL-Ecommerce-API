@@ -138,14 +138,14 @@ module.exports = {
     return {products: products};
   },
 
-  product: async function({_id}, req){
+  product: async function({id}, req){
 
     if(validator.isEmpty(_id)){
       const error = new Error('Required fields empty');
       error.code = 422;
       throw error;
      }
-    const product = await Product.findById(_id);
+    const product = await Product.findById(id);
     return product;
   },
 

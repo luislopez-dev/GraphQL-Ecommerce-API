@@ -64,7 +64,7 @@ module.exports = buildSchema(`
   type RootQuery {
       login(email: String!, password: String!): AuthData!
       products(offset: Int!, limit:Int!): ProductsData!
-      product(_id: ID!): Product!
+      product(id: ID!): Product!
       search(offset: Number!, limit: !Int, name: String): ProductsData!
   }
 
