@@ -88,4 +88,4 @@ All the queries can be found in the GraphQL schema file
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 * MIT License
-* Copyright 2021 © Luis Lopez
+* Copyright 2021-2022 © [Luis Lopez](https://github.com/luislopez-dev)
